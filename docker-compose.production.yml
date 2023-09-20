@@ -23,6 +23,8 @@ services:
     command: cp -r /app/build/. /frontend_static/
     volumes:
       - static_volume:/frontend_static
+    depends_on:
+      - db
   
   gateway:
     image: marty1107/taski_gateway:latest
